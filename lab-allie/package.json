@@ -1,0 +1,19 @@
+{
+  "name": "lab-allie",
+  "version": "1.0.0",
+  "description": "Hash",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Allie Grampa",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
+}
