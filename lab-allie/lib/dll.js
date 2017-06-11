@@ -48,8 +48,8 @@ DLL.prototype.remove = function(val) {
   if(!val) throw new Error('Please provide a value');
   if(!this.tail || !this.head) throw new Error('This list is empty');
 
-  let currentNode = this.tail;
-  let prevNode, nextNode;
+  // let currentNode = this.tail;
+  // // let prevNode, nextNode;
   // for(let i = 0; i < this.length; i++) {    
   //   if(currentNode.val === val) {
   //     return currentNode;
@@ -58,12 +58,18 @@ DLL.prototype.remove = function(val) {
   //   }
   // }
   
-  if(currentNode.val === val) {
-    prevNode.next = currentNode.next;
-    nextNode.prev = currentNode.prev;
-    return this;
-  } else {
-    currentNode = currentNode.next;
+  if(val === this.head.val) {
+    this.head = this.head.prev;
+    this.length--;
+  } else if(val === this.tail.val) {
+    this.tail = this.tail.next;
+    this.length--;
+  // } else if (currentNode.val === val) {
+  //   prevNode.next = currentNode.next;
+  //   nextNode.prev = currentNode.prev;
+  //   return this;
+  // } else {
+  //   currentNode = currentNode.next;
   }
 
   // let prevNode = currentNode.prev;

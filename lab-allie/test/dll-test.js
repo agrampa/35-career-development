@@ -17,6 +17,11 @@ describe('Testing dllAppend methods', function() {
       expect(dll).to.be.a('object');
       done();
     });
+    
+    it('should have a length property', done => {
+      expect(dll.length).to.equal(1);
+      done();
+    });
   });
   
   describe('Testing the append method', function() {
@@ -115,11 +120,17 @@ describe('Testing dllAppend methods', function() {
     
     it('should remove a specific node if it is the head', done => {
       dllRemove.remove(1);
+      expect(dllRemove.head.val).to.equal(2);
+      expect(dllRemove.head.val).not.to.equal(1);
+      expect(dllRemove.length).to.equal(5);
       done();
     });
     
     it('should remove a specific node if it is the tail', done => {
-      
+      dllRemove.remove(6);
+      expect(dllRemove.tail.val).to.equal(5);
+      expect(dllRemove.tail.val).not.to.equal(6);
+      expect(dllRemove.length).to.equal(4);
       done();
     });
     
