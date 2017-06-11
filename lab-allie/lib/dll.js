@@ -60,7 +60,6 @@ DLL.prototype.remove = function(val) {
 
   for(let i = 0; i < this.length; i++) {    
     if(currentNode.val === val) {
-      console.log('current node in if', currentNode);
       let prevNode = currentNode.prev;
       let nextNode = currentNode.next;
       prevNode.next = nextNode;

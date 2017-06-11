@@ -116,7 +116,6 @@ describe('Testing dllAppend methods', function() {
     dllRemove.append(3);
     dllRemove.append(2);
     dllRemove.append(1);
-    console.log(dllRemove);
     
     it('should remove a specific node if it is the head', done => {
       dllRemove.remove(1);
