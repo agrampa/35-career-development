@@ -36,3 +36,58 @@ Likewise, adding `dll.append(2);` will return the following:
   length: 2 }
 
 ```
+
+#### Implementing a Hash Table with a Doubly Linked Lists
+A doubly linked list can be instantiated with an empty array set to be the length determined in the constructor. For example: 
+```
+const HashTable = module.exports = function(size=8192) {
+  this.size = size;
+  this.buckets = [...Array(this.size)];
+};
+```
+
+A new hash table can be instantiated by entering `let hash = new HashTable();`, for example.
+
+This printout will result in the following hash table. Please note that the size of this hash table has been reduced to a size of 8 for readability and simplicity. 
+```
+hash { size: 8,
+  buckets: 
+   [ undefined,
+     'test value',
+     undefined,
+     undefined,
+     undefined,
+     undefined,
+     undefined,
+     undefined ] }
+```
+
+A value can be added to the hash table using the `.set` method. This method takes in a key and a value. For example, entering `hash.set('test key', 'test value');` will print out:
+```
+hash { size: 8,
+  buckets: 
+   [ undefined,
+     'test value',
+     undefined,
+     undefined,
+     undefined,
+     undefined,
+     undefined,
+     undefined ] }
+```
+
+A value can be retrieved using the `.get` method. This method takes in a key and returns the value. For example, entering `hash.get('test key');` will print out `test value`.
+
+A value can be removed using the `.remove` method. This method takes in a key and removes the value located at that specific index. For example, entering `hash.remove('test key');` will return a hash table with the index again being undefined:
+```
+hash { size: 8,
+  buckets: 
+   [ undefined,
+     undefined,
+     undefined,
+     undefined,
+     undefined,
+     undefined,
+     undefined,
+     undefined ] }
+```

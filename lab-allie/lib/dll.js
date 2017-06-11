@@ -73,3 +73,21 @@ DLL.prototype.remove = function(val) {
 
   return this;
 };
+// 
+// DLL.prototype.find = function(val) {
+//   let currentNode = this.buckets.head.val;
+// 
+//   for(let i = 0; i < this.length; i++) {    
+//     if(currentNode.val === val) {
+//       let prevNode = currentNode.prev;
+//       let nextNode = currentNode.next;
+//       prevNode.next = nextNode;
+//       nextNode.prev = prevNode.prev;
+//       this.length--;
+//       return this;
+//     } else {
+//       currentNode = currentNode.next;
+//     }
+//   }
+//   return currentNode;
+// };
