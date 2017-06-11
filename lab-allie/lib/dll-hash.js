@@ -29,5 +29,5 @@ DLLHashTable.prototype.get = function(key) {
 
 DLLHashTable.prototype.remove = function(key) {
   let address = this.hashKey(key);
-  this.buckets[address] ? delete this.buckets[address] : new Error('Invalid key');
+  this.buckets[address] ? this.buckets[address] = new DLL() : new Error('Invalid key');
 };

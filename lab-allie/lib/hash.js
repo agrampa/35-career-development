@@ -17,7 +17,6 @@ HashTable.prototype.set = function(key, value) {
 };
 
 HashTable.prototype.get = function(key) {
-  if(this.buckets[this.hashKey(key)].length === 1) return null;
   return this.buckets[this.hashKey(key)];
 };
 

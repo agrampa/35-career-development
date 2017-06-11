@@ -51,5 +51,5 @@ console.log('hash', hash);
 // hash.get('test key');
 console.log('hash get', hash.get('test3'));
 console.log('hash get', hash.get('blah'));
-// hash.remove('test key');
-// console.log('hash', hash);
+hash.remove('test key');
+console.log('hash', hash);
