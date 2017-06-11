@@ -4,7 +4,9 @@ const expect = require('chai').expect;
 const faker = require('faker');
 const HashTable = require('../lib/hash.js');
 
-describe.only('Testing the Hash Table Module', function() {
+/* eslint-disable */
+
+describe('Testing the Hash Table Module', function() {
   before(done => {
     this.fakeKeys = [...Array(100)].map(key => key = faker.hacker.phrase());
     done();

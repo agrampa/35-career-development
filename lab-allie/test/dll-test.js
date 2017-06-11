@@ -5,8 +5,8 @@ const expect = require('chai').expect;
 const DLL = require('../lib/dll.js');
 let dll = new DLL();
 
-describe('Testing dllAppend methods', function() {
-  describe('Instantiating a new dllAppend', () => {
+describe('Testing Hash Table methods', function() {
+  describe('Instantiating a new Hash Table', () => {
     
     it('should create a new dllAppend', done => {      
       expect(dll).to.exist;

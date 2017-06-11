@@ -2,7 +2,7 @@
 
 const DLL = require('./dll.js');
 
-const DLLHashTable = module.exports = function(size=8) {
+const DLLHashTable = module.exports = function(size=8192) {
   this.size = size;
   this.buckets = [...Array(this.size)];
   // this.buckets.forEach(index => this.buckets[index] = new DLL());
@@ -19,10 +19,14 @@ DLLHashTable.prototype.hashKey = function(key) {
 };
 
 DLLHashTable.prototype.set = function(key, value) {
+  if(!key || !value) throw new Error('Key required');
+
   this.buckets[this.hashKey(key)].append(value);
 };
 
 DLLHashTable.prototype.get = function(key) {
+  if(!key) throw new Error('Key required');
+  
   if(this.buckets[this.hashKey(key)].head === null) return null;
   return this.buckets[this.hashKey(key)];
 };
