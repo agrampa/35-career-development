@@ -135,7 +135,8 @@ describe('Testing dllAppend methods', function() {
     });
     
     it('should remove a specific node within the dll', done => {
-      
+      dllRemove.remove(4);
+      expect(dllRemove).not.to.contain(4);
       done();
     });
     

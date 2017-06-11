@@ -47,16 +47,6 @@ DLL.prototype.prepend = function(val) {
 DLL.prototype.remove = function(val) {
   if(!val) throw new Error('Please provide a value');
   if(!this.tail || !this.head) throw new Error('This list is empty');
-
-  // let currentNode = this.tail;
-  // // let prevNode, nextNode;
-  // for(let i = 0; i < this.length; i++) {    
-  //   if(currentNode.val === val) {
-  //     return currentNode;
-  //   } else {
-  //     currentNode = currentNode.next;
-  //   }
-  // }
   
   if(val === this.head.val) {
     this.head = this.head.prev;
@@ -64,46 +54,23 @@ DLL.prototype.remove = function(val) {
   } else if(val === this.tail.val) {
     this.tail = this.tail.next;
     this.length--;
-  // } else if (currentNode.val === val) {
-  //   prevNode.next = currentNode.next;
-  //   nextNode.prev = currentNode.prev;
-  //   return this;
-  // } else {
-  //   currentNode = currentNode.next;
+  }
+  
+  let currentNode = this.tail;
+
+  for(let i = 0; i < this.length; i++) {    
+    if(currentNode.val === val) {
+      console.log('current node in if', currentNode);
+      let prevNode = currentNode.prev;
+      let nextNode = currentNode.next;
+      prevNode.next = nextNode;
+      nextNode.prev = prevNode.prev;
+      this.length--;
+      return this;
+    } else {
+      currentNode = currentNode.next;
+    }
   }
 
-  // let prevNode = currentNode.prev;
-  // let nextNode = currentNode.next;
-  
-  // prevNode.next = nextNode;
-  // nextNode.prev = prevNode;
-  // this.length--;
-  
   return this;
-
-
-  // let nodeBefore = this.head;
-  // let targetNode;
-  // 
-  // for(let i = 0; i < this.length; i++) {
-  //   targetNode = nodeBefore.next;
-  //   return targetNode;
-  // }
-  // 
-  // let prevNode = targetNode.prev;
-  // let nextNode = targetNode.next;
-  // targetNode.prev.next = nextNode;
-  // targetNode.next.prev = prevNode;
-  // 
-  // if(this === this.head) {
-  //   this.head = this.next;
-  //   this.head.prev = null;
-  // } else if(this === this.tail) {
-  //   this.tail = this.tail.prev;
-  //   this.tail.next = null;
-  // } else {    
-  //   prev.next = next;
-  //   next.prev = prev;
-  // }
-  // return this;
 };
