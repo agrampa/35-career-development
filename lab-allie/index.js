@@ -3,9 +3,9 @@
 const DLL = require('./lib/dll.js');
 let dll = new DLL();
 dll.append(1);
-console.log('dll with one node, val 1: ', dll);
+// console.log('dll with one node, val 1: ', dll);
 dll.append(2);
-console.log('dll with a second node appended, val 2: ', dll);
+// console.log('dll with a second node appended, val 2: ', dll);
 // dll.append(3);
 // console.log('dll with a third node appended, val 3: ', dll);
 // console.log('head.prev', dll.head);
@@ -39,3 +39,11 @@ console.log('dll with a second node appended, val 2: ', dll);
 // console.log('before remove', dllRemove.tail.next.next);
 // // console.log(dllRemove);
 // console.log('after remove', dllRemove.tail.next.next);
+
+const HashTable = require('./lib/hash.js');
+let hash = new HashTable();
+// console.log('hash', hash);
+hash.set('test key', 'test value');
+console.log('hash', hash);
+// hash.get('test key');
+// console.log('hash get', hash.get('test key'));

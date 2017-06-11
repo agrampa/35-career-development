@@ -1,8 +1,14 @@
 'use strict';
 
-const HashTable = module.exports = function(size=8192) {
+const DLL = require('./dll.js');
+
+const HashTable = module.exports = function(size=8) {
   this.size = size;
   this.buckets = [...Array(this.size)];
+  // this.buckets.forEach(index => this.buckets[index] = new DLL());
+  for(let i = 0; i < this.size; i++) {
+    this.buckets[i] = new DLL();
+  }
 };
 
 HashTable.prototype.hashKey = function(key) {
