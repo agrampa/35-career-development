@@ -11,6 +11,7 @@ const DLLHashTable = module.exports = function(size=8192) {
   }
 };
 
+// O(1)
 DLLHashTable.prototype.hashKey = function(key) {
   if(!key) throw new Error('Key required');
   
@@ -18,12 +19,14 @@ DLLHashTable.prototype.hashKey = function(key) {
   return hash;
 };
 
+// O(1)
 DLLHashTable.prototype.set = function(key, value) {
   if(!key || !value) throw new Error('Key required');
 
   this.buckets[this.hashKey(key)].append(value);
 };
 
+// O(1)
 DLLHashTable.prototype.get = function(key) {
   if(!key) throw new Error('Key required');
   
@@ -31,6 +34,7 @@ DLLHashTable.prototype.get = function(key) {
   return this.buckets[this.hashKey(key)];
 };
 
+// O(1)
 DLLHashTable.prototype.remove = function(key) {
   let address = this.hashKey(key);
   this.buckets[address] ? this.buckets[address] = new DLL() : new Error('Invalid key');
